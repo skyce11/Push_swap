@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sa.c                                            :+:      :+:    :+:   */
+/*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 11:05:50 by migonzal          #+#    #+#             */
-/*   Updated: 2022/04/12 08:34:17 by migonzal         ###   ########.fr       */
+/*   Created: 2022/03/29 09:26:46 by migonzal          #+#    #+#             */
+/*   Updated: 2022/04/12 08:32:41 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sa(t_list **a)
+void	ft_ss(t_list **a, t_list **b)
 {
-	t_list	*aux;
+	t_list	*auxa;
+	t_list	*auxb;
 
-	if (!a)
+	if (!a || !b)
 		return ;
-	aux = (*a);
-	if ((*a)-> next)
+	if ((*a)-> next && (*b)-> next)
 	{
-		aux = (*a)-> next;
-		(*a)-> next = aux-> next;
-		ft_lstadd_front(a, aux);
+		auxa = (*a)-> next;
+		(*a)-> next = auxa -> next;
+		ft_lstadd_front(a, auxa);
+		auxb = (*b)-> next;
+		(*b)-> next = auxb -> next;
+		ft_lstadd_front(b, auxb);
 	}
-	write(1, "sa\n", 3);
+	write(1, "ss\n", 3);
 }

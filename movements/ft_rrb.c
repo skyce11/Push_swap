@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sa.c                                            :+:      :+:    :+:   */
+/*   ft_rrb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 11:05:50 by migonzal          #+#    #+#             */
-/*   Updated: 2022/04/12 08:34:17 by migonzal         ###   ########.fr       */
+/*   Created: 2022/03/28 09:56:19 by migonzal          #+#    #+#             */
+/*   Updated: 2022/04/12 08:29:28 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sa(t_list **a)
+int	ft_rrb_aux(t_list **b)
 {
-	t_list	*aux;
+	t_list	*act;
+	t_list	*ant;
 
-	if (!a)
-		return ;
-	aux = (*a);
-	if ((*a)-> next)
+	if (!b)
+		return (0);
+	ant = (*b);
+	act = ant -> next;
+	while (act -> next)
 	{
-		aux = (*a)-> next;
-		(*a)-> next = aux-> next;
-		ft_lstadd_front(a, aux);
+		ant = act;
+		act = act -> next;
 	}
-	write(1, "sa\n", 3);
+	ft_lstadd_front(b, ft_lstnewpos(act -> num, act -> pos));
+	ant -> next = 0;
+	ft_lstdelone(act);
+	return (1);
+}
+
+void	ft_rrb(t_list **b)
+{
+	if (!b)
+		return ;
+	if (ft_rrb_aux(b))
+		write(1, "rrb\n", 4);
 }
