@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_ordered.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 10:31:21 by migonzal          #+#    #+#             */
-/*   Updated: 2022/04/12 09:52:42 by migonzal         ###   ########.fr       */
+/*   Created: 2022/03/31 08:33:41 by migonzal          #+#    #+#             */
+/*   Updated: 2022/04/01 10:26:25 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isdigit(int c)
+#include "push_swap.h"
+
+
+int	ordered(t_list *a)
 {
-	int	i;
+	t_list *aux = 0;
 
-	i = 0;
-	if (c >= '0' && c <= '9')
-		i = 1;
-	return (i);
+	if (!a)
+		return (0);
+
+	while (a)
+	{
+		if (a -> next == NULL)
+			break;
+		aux = a -> next;
+//		printf("A ver que coño pasa %d %d\n", a -> num, aux -> num);
+		if (a -> num < aux -> num)
+		{
+			a = a -> next;
+		}
+		else
+		{
+//			printf("ERROOOOOOOR\n");
+			return (0);
+		}
+	}
+	return (1);
 }

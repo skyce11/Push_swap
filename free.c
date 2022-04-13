@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 10:31:21 by migonzal          #+#    #+#             */
-/*   Updated: 2022/04/12 09:52:42 by migonzal         ###   ########.fr       */
+/*   Created: 2022/04/04 08:10:30 by migonzal          #+#    #+#             */
+/*   Updated: 2022/04/12 08:28:50 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isdigit(int c)
+#include "push_swap.h"
+
+void	free_variables(t_list **list)
+{
+	t_list	*sig;
+
+	sig = (*list);
+	while (sig)
+	{
+		sig = (*list)->next;
+		free((*list));
+		(*list) = sig;
+	}
+	free(*list);
+}
+
+void	free_list(char **list)
 {
 	int	i;
 
-	i = 0;
-	if (c >= '0' && c <= '9')
-		i = 1;
-	return (i);
+	i = -1;
+	while (list[++i])
+		free(list[i]);
+	free(list);
 }

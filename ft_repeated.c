@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_repeated.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 10:31:21 by migonzal          #+#    #+#             */
-/*   Updated: 2022/04/12 09:52:42 by migonzal         ###   ########.fr       */
+/*   Created: 2022/04/04 09:24:12 by migonzal          #+#    #+#             */
+/*   Updated: 2022/04/11 13:00:59 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isdigit(int c)
+#include "push_swap.h"
+
+
+int	ft_repeated(t_list *a)
 {
-	int	i;
+	t_list	*sig;
+	t_list	*var;
+	int		n;
 
-	i = 0;
-	if (c >= '0' && c <= '9')
-		i = 1;
-	return (i);
+	var = a;
+	if (!a)
+		return (0);
+	while (var != 0)
+	{
+		n = var->num;
+		sig = var->next;
+		while (sig != 0)
+		{
+			if (n == sig->num)
+				return (0);
+			sig = sig->next;
+		}
+		var = var->next;
+	}
+	return (1);
 }

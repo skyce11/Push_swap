@@ -6,7 +6,7 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:29:52 by migonzal          #+#    #+#             */
-/*   Updated: 2022/03/21 12:39:24 by migonzal         ###   ########.fr       */
+/*   Updated: 2022/04/12 08:43:11 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,7 @@ static	int	ft_is_space(int i)
 		return (0);
 }
 
-int ft_atoi( char *str)
+int	ft_atoi( char *str)
 {
 	int					i;
 	int					s;
