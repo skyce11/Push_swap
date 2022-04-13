@@ -6,17 +6,17 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:47:24 by migonzal          #+#    #+#             */
-/*   Updated: 2022/03/24 10:15:38 by migonzal         ###   ########.fr       */
+/*   Updated: 2022/04/12 08:38:46 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list *ft_lstnew(int num)
+t_list	*ft_lstnew(int num)
 {
-	t_list *new;
+	t_list	*new;
 
-	new =  malloc (sizeof(t_list));
+	new = malloc (sizeof(t_list));
 	if (!new)
 		return (0);
 	new -> num = num;
@@ -25,14 +25,13 @@ t_list *ft_lstnew(int num)
 	return (new);
 }
 
-t_list *ft_lstnewpos(int num, int pos)
+t_list	*ft_lstnewpos(int num, int pos)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (0);
-
 	new -> num = num;
 	new -> pos = pos;
 	new -> next = NULL;

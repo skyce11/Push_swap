@@ -6,7 +6,7 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:53:32 by migonzal          #+#    #+#             */
-/*   Updated: 2022/03/24 12:01:58 by migonzal         ###   ########.fr       */
+/*   Updated: 2022/04/12 08:41:13 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	*ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *aux;
+	t_list	*aux;
 
-	if(*lst)
+	if (*lst)
 	{
 		aux = ft_lstlast(*lst);
 		aux -> next = new;
-//d		aux -> pos  = aux -> pos + 1;
 	}
 	else
 		*lst = new;

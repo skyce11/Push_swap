@@ -6,18 +6,18 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:15:48 by migonzal          #+#    #+#             */
-/*   Updated: 2022/03/24 08:19:54 by migonzal         ###   ########.fr       */
+/*   Updated: 2022/04/12 08:38:03 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_lstsize(t_list *list)
+int	ft_lstsize(t_list *list)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(list)
+	while (list)
 	{
 		list = list -> next;
 		i++;
